@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    My Blog
+{% endblock %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'blog/post.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/index.css' %}">
+
+{% endblock %}
+
+
+{% block content %}
+
+    <!-- -->
+    <section id="welcome">
+        <header>
+            <img src="{% static 'blog/images/neil.jpg' %}" alt="Neil the author of This blog">
+            <h2>Neil's Blog</h2>
+        </header>
+        <p>Hi, I am Neil , I love to learn about technology primarily web and game development</p>
+    </section>
+    <!-- -->
+    <section id="latest-posts">
+        <h2>My Latest Thoughts</h2>
+        <ul>
+<!--            <span>{{ posts }}</span>-->
+            {% for post in posts %}
+                {% include 'blog/includes/post.html' %}
+            {% endfor %}
+        </ul>
+    </section>
+    <!-- -->
+    <section id="about">
+        <h2>What I Do</h2>
+        <p>I love programming, and problem solving.</p>
+        <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+    </section>
+
+
+{% endblock %}

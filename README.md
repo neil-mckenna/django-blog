@@ -1,1 +1,3 @@
-"# django-blog" 
+# django-blog
+
+By Neil Mckenna
